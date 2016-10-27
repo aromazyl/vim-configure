@@ -129,3 +129,4 @@ let g:airline#extensions#whitespace#enabled = 0
 let g:airline#extensions#whitespace#symbol = '!'
 set hlsearch
 set tags=tags;/
+set backspace=2

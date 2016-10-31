@@ -28,6 +28,10 @@ Plugin 'vim-scripts/google.vim'
 Plugin 'vim-scripts/cpp.vim'
 Plugin 'vim-scripts/taglist.vim'
 Plugin 'vim-scripts/python.vim'
+" vim 模版
+Plugin 'aperezdc/vim-template'
+" vim 语法校验
+Plugin 'scrooloose/syntastic'
 
 "底部状态栏
 Plugin 'Lokaltog/vim-powerline'
@@ -65,7 +69,7 @@ filetype plugin indent on    " required
 " ==============================================================================
 " 组件设置
 " flazz/vim-colorschemes,主题设置
-colorscheme  codeschool
+colorscheme molokai
 
 "NERDTree 插件配置
 map <F3> :NERDTreeToggle<CR>
@@ -130,3 +134,13 @@ let g:airline#extensions#whitespace#symbol = '!'
 set hlsearch
 set tags=tags;/
 set backspace=2
+let g:syntastic_cpp_compiler = 'clang++'
+let g:syntastic_cpp_compiler_options = '-std=c++11 -stdlib=libc++'
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0

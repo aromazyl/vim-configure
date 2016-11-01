@@ -27,11 +27,12 @@ Plugin 'vim-scripts/a.vim'
 Plugin 'vim-scripts/google.vim'
 Plugin 'vim-scripts/cpp.vim'
 Plugin 'vim-scripts/taglist.vim'
+"Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-scripts/python.vim'
 " vim 模版
 Plugin 'aperezdc/vim-template'
 " vim 语法校验
-Plugin 'scrooloose/syntastic'
+" Plugin 'scrooloose/syntastic'
 
 "底部状态栏
 Plugin 'Lokaltog/vim-powerline'
@@ -134,13 +135,31 @@ let g:airline#extensions#whitespace#symbol = '!'
 set hlsearch
 set tags=tags;/
 set backspace=2
-let g:syntastic_cpp_compiler = 'clang++'
-let g:syntastic_cpp_compiler_options = '-std=c++11 -stdlib=libc++'
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" let g:syntastic_cpp_compiler = 'clang++'
+" let g:syntastic_cpp_compiler_options = '-std=c++11 -stdlib=libc++'
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+" 
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
+" 
+" let g:syntastic_error_symbol='>>'
+" let g:syntastic_warning_symbol='>'
+fun! SetMkfile()
+  let filemk = "Makefile"
+  let pathmk = "./"
+  let depth = 1
+  while depth < 4
+    if filereadable(pathmk . filemk)
+      return pathmk
+    endif
+    let depth += 1
+    let pathmk = "../" . pathmk
+  endwhile
+  return "."
+endf
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+command! -nargs=* Make tabnew | let $mkpath = SetMkfile() | make <args> -C $mkpath | cwindow 10

@@ -148,18 +148,19 @@ set backspace=2
 " 
 " let g:syntastic_error_symbol='>>'
 " let g:syntastic_warning_symbol='>'
-fun! SetMkfile()
-  let filemk = "Makefile"
-  let pathmk = "./"
-  let depth = 1
-  while depth < 4
-    if filereadable(pathmk . filemk)
-      return pathmk
-    endif
-    let depth += 1
-    let pathmk = "../" . pathmk
-  endwhile
-  return "."
-endf
-
-command! -nargs=* Make tabnew | let $mkpath = SetMkfile() | make <args> -C $mkpath | cwindow 10
+" fun! SetMkfile()
+"   let filemk = "Makefile"
+"   let pathmk = "./"
+"   let depth = 1
+"   while depth < 4
+"     if filereadable(pathmk . filemk)
+"       return pathmk
+"     endif
+"     let depth += 1
+"     let pathmk = "../" . pathmk
+"   endwhile
+"   return "."
+" endf
+" 
+" command! -nargs=* Make tabnew | let $mkpath = SetMkfile() | make <args> -C $mkpath | cwindow 10
+set makeprg=[[\ -f\ Makefile\ ]]\ &&\ make\ \\\|\\\|\ make\ -C\ ..

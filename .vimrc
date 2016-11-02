@@ -164,3 +164,5 @@ set backspace=2
 " 
 " command! -nargs=* Make tabnew | let $mkpath = SetMkfile() | make <args> -C $mkpath | cwindow 10
 set makeprg=[[\ -f\ Makefile\ ]]\ &&\ make\ \\\|\\\|\ make\ -C\ ..
+let g:username = 'zhangyule'
+let g:email = 'zyl2336709@gmail.com'

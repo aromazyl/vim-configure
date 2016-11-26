@@ -11,6 +11,8 @@ call vundle#begin()
 
 " 必须安装，let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'wlangstroth/vim-racket'
+Plugin 'derekwyatt/vim-scala'
 "Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline'
 
@@ -163,6 +165,7 @@ set backspace=2
 " endf
 " 
 " command! -nargs=* Make tabnew | let $mkpath = SetMkfile() | make <args> -C $mkpath | cwindow 10
-set makeprg=[[\ -f\ Makefile\ ]]\ &&\ make\ \\\|\\\|\ make\ -C\ ..
+" set makeprg=[[\ -f\ Makefile\ ]]\ &&\ make\ \\\|\\\|\ make\ -C\ ..
 let g:username = 'zhangyule'
 let g:email = 'zyl2336709@gmail.com'
+set guifont=Dijkstra\ 12

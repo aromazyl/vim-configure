@@ -33,6 +33,7 @@ Plugin 'vim-scripts/taglist.vim'
 Plugin 'vim-scripts/python.vim'
 " vim 模版
 Plugin 'aperezdc/vim-template'
+Plugin 'vim-scripts/nginx.vim'
 " vim 语法校验
 " Plugin 'scrooloose/syntastic'
 

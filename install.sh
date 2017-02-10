@@ -10,4 +10,5 @@ cd ..
 #download vundle and install
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 cp .vimrc ~/
+source ~/.bashrc
 vim -E -c BundleInstall -c q

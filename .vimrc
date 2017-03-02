@@ -11,6 +11,7 @@ call vundle#begin()
 
 " 必须安装，let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'davidzchen/vim-bazel'
 Plugin 'vim-scripts/scons.vim'
 Plugin 'wesleyche/SrcExpl'
 Plugin 'wlangstroth/vim-racket'

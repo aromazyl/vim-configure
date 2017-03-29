@@ -13,6 +13,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'google/vim-maktaba'
 Plugin 'bazelbuild/vim-bazel'
+Plugin 'fatih/vim-go'
 "Plugin 'davidzchen/vim-bazel'
 Plugin 'vim-scripts/scons.vim'
 Plugin 'wesleyche/SrcExpl'

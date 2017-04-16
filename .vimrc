@@ -182,6 +182,8 @@ set guifont=Dijkstra\ 12
 
 " // The switch of the Source Explorer 
 nmap <F8> :SrcExplToggle<CR> 
+" // The tagbar helper
+nmap <F9> :TagbarToggle<CR>
 
 " // Set the height of Source Explorer window 
 let g:SrcExpl_winHeight = 8 

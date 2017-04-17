@@ -12,6 +12,7 @@ call vundle#begin()
 " 必须安装，let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Bundle 'dgryski/vim-godef'
+Bundle 'vim-scripts/pathogen.vim'
 Bundle 'Blackrush/vim-gocode'
 Bundle 'majutsushi/tagbar'
 Plugin 'google/vim-maktaba'

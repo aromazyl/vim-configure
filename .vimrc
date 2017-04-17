@@ -1,3 +1,5 @@
+
+call pathogen#infect()
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -235,6 +237,7 @@ let g:SrcExpl_prevDefKey = "<F3>"
 " // Set "<F4>" key for displaying the next definition
 " in the jump list 
 let g:SrcExpl_nextDefKey = "<F4>" 
+
 
 :nnoremap <c-]> g<c-]>
 :vnoremap <c-]> g<c-]>

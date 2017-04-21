@@ -1,5 +1,3 @@
-
-call pathogen#infect()
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -12,6 +10,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " 必须安装，let Vundle manage Vundle, required
+Plugin 'sdiehl/haskell-vim-proto'
 Plugin 'VundleVim/Vundle.vim'
 Bundle 'dgryski/vim-godef'
 Bundle 'vim-scripts/pathogen.vim'
@@ -238,6 +237,11 @@ let g:SrcExpl_prevDefKey = "<F3>"
 " in the jump list 
 let g:SrcExpl_nextDefKey = "<F4>" 
 
-
 :nnoremap <c-]> g<c-]>
 :vnoremap <c-]> g<c-]>
+
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1

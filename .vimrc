@@ -237,3 +237,5 @@ let g:SrcExpl_nextDefKey = "<F4>"
 
 :nnoremap <c-]> g<c-]>
 :vnoremap <c-]> g<c-]>
+set background=dark
+set t_Co=256

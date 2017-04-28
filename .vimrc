@@ -10,8 +10,10 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " 必须安装，let Vundle manage Vundle, required
+Plugin 'neovimhaskell/haskell-vim'
 Plugin 'VundleVim/Vundle.vim'
 Bundle 'dgryski/vim-godef'
+Bundle 'vim-scripts/pathogen.vim'
 Bundle 'Blackrush/vim-gocode'
 Bundle 'majutsushi/tagbar'
 Plugin 'google/vim-maktaba'
@@ -237,5 +239,16 @@ let g:SrcExpl_nextDefKey = "<F4>"
 
 :nnoremap <c-]> g<c-]>
 :vnoremap <c-]> g<c-]>
+<<<<<<< HEAD
 set background=dark
 set t_Co=256
+=======
+
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+" 使用希腊字母输入
+set digraph
+>>>>>>> 5bcdcd1b665e3e785633572d472672006b50d85b

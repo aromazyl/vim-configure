@@ -13,6 +13,7 @@ call vundle#begin()
 Plugin 'neovimhaskell/haskell-vim'
 Plugin 'VundleVim/Vundle.vim'
 Bundle 'dgryski/vim-godef'
+Plugin 'tikhomirov/vim-glsl'
 Bundle 'vim-scripts/pathogen.vim'
 Bundle 'Blackrush/vim-gocode'
 Bundle 'majutsushi/tagbar'
@@ -22,7 +23,8 @@ Plugin 'fatih/vim-go'
 "Plugin 'davidzchen/vim-bazel'
 Plugin 'vim-scripts/scons.vim'
 Plugin 'wesleyche/SrcExpl'
-Plugin 'wlangstroth/vim-racket'
+"Plugin 'wlangstroth/vim-racket'
+Plugin 'vim-scripts/racket.vim'
 Plugin 'derekwyatt/vim-scala'
 "Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline'
@@ -239,10 +241,6 @@ let g:SrcExpl_nextDefKey = "<F4>"
 
 :nnoremap <c-]> g<c-]>
 :vnoremap <c-]> g<c-]>
-<<<<<<< HEAD
-set background=dark
-set t_Co=256
-=======
 
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
@@ -251,4 +249,3 @@ let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 " 使用希腊字母输入
 set digraph
->>>>>>> 5bcdcd1b665e3e785633572d472672006b50d85b

@@ -14,6 +14,7 @@ Plugin 'neovimhaskell/haskell-vim'
 Plugin 'VundleVim/Vundle.vim'
 Bundle 'dgryski/vim-godef'
 Plugin 'tikhomirov/vim-glsl'
+Bundle 'dgryski/vim-godef'
 Bundle 'vim-scripts/pathogen.vim'
 Bundle 'Blackrush/vim-gocode'
 Bundle 'majutsushi/tagbar'
@@ -28,7 +29,6 @@ Plugin 'vim-scripts/racket.vim'
 Plugin 'derekwyatt/vim-scala'
 "Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline'
-
 Plugin 'vim-airline/vim-airline-themes'
 " 来自github
 
@@ -57,7 +57,7 @@ Plugin 'Lokaltog/vim-powerline'
 Plugin 'scrooloose/nerdtree'
 
 "快速查找
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 
 "快速注释
 Plugin 'scrooloose/nerdcommenter'
@@ -239,9 +239,24 @@ let g:SrcExpl_prevDefKey = "<F3>"
 " in the jump list 
 let g:SrcExpl_nextDefKey = "<F4>" 
 
+let g:ctrlp_map = '<leader>p'
+let g:ctrlp_cmd = 'CtrlP'
+map <leader>f :CtrlPMRU<CR>
+let g:ctrlp_custom_ignore = {
+    \ 'dir':  '\v[\/]\.(git|hg|svn|rvm)$',
+    \ 'file': '\v\.(exe|so|dll|zip|tar|tar.gz|pyc)$',
+    \ }
+let g:ctrlp_working_path_mode=0
+let g:ctrlp_match_window_bottom=1
+let g:ctrlp_max_height=15
+let g:ctrlp_match_window_reversed=0
+let g:ctrlp_mruf_max=500
+
+let g:ctrlp_follow_symlinks=1
 :nnoremap <c-]> g<c-]>
 :vnoremap <c-]> g<c-]>
-
+set background=dark
+set t_Co=256
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1

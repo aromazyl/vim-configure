@@ -1,3 +1,4 @@
+set encoding=utf-8
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -12,8 +13,9 @@ call vundle#begin()
 " 必须安装，let Vundle manage Vundle, required
 Plugin 'neovimhaskell/haskell-vim'
 Plugin 'VundleVim/Vundle.vim'
-Bundle 'dgryski/vim-godef'
+" Bundle 'dgryski/vim-godef'
 Plugin 'tikhomirov/vim-glsl'
+Plugin 'edkolev/promptline.vim'
 Bundle 'dgryski/vim-godef'
 Bundle 'vim-scripts/pathogen.vim'
 Bundle 'Blackrush/vim-gocode'
@@ -24,11 +26,11 @@ Plugin 'fatih/vim-go'
 "Plugin 'davidzchen/vim-bazel'
 Plugin 'vim-scripts/scons.vim'
 Plugin 'wesleyche/SrcExpl'
-"Plugin 'wlangstroth/vim-racket'
-Plugin 'vim-scripts/racket.vim'
+Plugin 'wlangstroth/vim-racket'
 Plugin 'derekwyatt/vim-scala'
 "Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline'
+" Plugin 'vim-scripts/matlab.vim'
 Plugin 'vim-airline/vim-airline-themes'
 " 来自github
 
@@ -246,13 +248,13 @@ let g:ctrlp_custom_ignore = {
     \ 'dir':  '\v[\/]\.(git|hg|svn|rvm)$',
     \ 'file': '\v\.(exe|so|dll|zip|tar|tar.gz|pyc)$',
     \ }
-let g:ctrlp_working_path_mode=0
+let g:ctrlp_working_path_mode='ra'
 let g:ctrlp_match_window_bottom=1
 let g:ctrlp_max_height=15
 let g:ctrlp_match_window_reversed=0
 let g:ctrlp_mruf_max=500
-
 let g:ctrlp_follow_symlinks=1
+
 :nnoremap <c-]> g<c-]>
 :vnoremap <c-]> g<c-]>
 set background=dark
@@ -264,3 +266,9 @@ let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 " 使用希腊字母输入
 set digraph
+set guifont=Source\ Code\ Pro\ for\ Powerline
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_symbols.space = "\ua0"
+let g:promptline_theme = 'luna'

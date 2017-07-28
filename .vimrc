@@ -14,12 +14,15 @@ call vundle#begin()
 Plugin 'neovimhaskell/haskell-vim'
 Plugin 'VundleVim/Vundle.vim'
 " Bundle 'dgryski/vim-godef'
-Plugin 'tikhomirov/vim-glsl'
+" Plugin 'tikhomirov/vim-glsl'
+" Bundle 'beyondmarc/glsl.vim'
+Bundle 'sheerun/vim-polyglot'
 Plugin 'edkolev/promptline.vim'
 Bundle 'dgryski/vim-godef'
 Bundle 'vim-scripts/pathogen.vim'
 Bundle 'Blackrush/vim-gocode'
 Bundle 'majutsushi/tagbar'
+Plugin 'vim-scripts/opencl.vim'
 Plugin 'google/vim-maktaba'
 Plugin 'bazelbuild/vim-bazel'
 Plugin 'fatih/vim-go'
@@ -136,7 +139,7 @@ let g:neocomplcache_force_overwrite_completefunc = 1
 let g:airline_theme='luna' 
 
 "这个是安装字体后 必须设置此项" 
-let g:airline_powerline_fonts = 1   
+let g:airline_powerline_fonts = 1
 
 "打开tabline功能,方便查看Buffer和切换，这个功能比较不错"
 "我还省去了minibufexpl插件，因为我习惯在1个Tab下用多个buffer"
@@ -265,10 +268,45 @@ let g:go_highlight_structs = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 " 使用希腊字母输入
-set digraph
+" set digraph
 set guifont=Source\ Code\ Pro\ for\ Powerline
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
 let g:airline_symbols.space = "\ua0"
 let g:promptline_theme = 'luna'
+
+" air-line
+
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+    endif
+
+" unicode symbols
+let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '«'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.whitespace = 'Ξ'
+
+" airline symbols
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = ''
+set fenc=
+if executable("ag")
+  set grepprg=ag\ --nogroup\ --nocolor\ --ignore-case\ --column
+  set grepformat=%f:%l:%c:%m,%f:%l:%m
+endif
+autocmd! BufNewFile,BufRead *.vs,*.fs set ft=glsl

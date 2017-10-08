@@ -1,3 +1,4 @@
+set encoding=utf-8
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -10,10 +11,22 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " 必须安装，let Vundle manage Vundle, required
+Plugin 'neovimhaskell/haskell-vim'
 Plugin 'VundleVim/Vundle.vim'
+" Bundle 'dgryski/vim-godef'
+" Plugin 'tikhomirov/vim-glsl'
+" Bundle 'beyondmarc/glsl.vim'
+Bundle 'sheerun/vim-polyglot'
+Plugin 'edkolev/promptline.vim'
+Bundle 'dgryski/vim-godef'
+Bundle 'vim-scripts/pathogen.vim'
+Bundle 'Blackrush/vim-gocode'
+Bundle 'majutsushi/tagbar'
+Plugin 'vim-scripts/opencl.vim'
 Plugin 'google/vim-maktaba'
 Plugin 'petRUShka/vim-opencl'
 Plugin 'bazelbuild/vim-bazel'
+Plugin 'fatih/vim-go'
 "Plugin 'davidzchen/vim-bazel'
 Plugin 'vim-scripts/scons.vim'
 Plugin 'wesleyche/SrcExpl'
@@ -21,7 +34,7 @@ Plugin 'wlangstroth/vim-racket'
 Plugin 'derekwyatt/vim-scala'
 "Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline'
-
+" Plugin 'vim-scripts/matlab.vim'
 Plugin 'vim-airline/vim-airline-themes'
 " 来自github
 
@@ -50,7 +63,7 @@ Plugin 'Lokaltog/vim-powerline'
 Plugin 'scrooloose/nerdtree'
 
 "快速查找
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 
 "快速注释
 Plugin 'scrooloose/nerdcommenter'
@@ -127,7 +140,7 @@ let g:neocomplcache_force_overwrite_completefunc = 1
 let g:airline_theme='luna' 
 
 "这个是安装字体后 必须设置此项" 
-let g:airline_powerline_fonts = 1   
+let g:airline_powerline_fonts = 1
 
 "打开tabline功能,方便查看Buffer和切换，这个功能比较不错"
 "我还省去了minibufexpl插件，因为我习惯在1个Tab下用多个buffer"
@@ -179,6 +192,8 @@ set guifont=Dijkstra\ 12
 
 " // The switch of the Source Explorer 
 nmap <F8> :SrcExplToggle<CR> 
+" // The tagbar helper
+nmap <F9> :TagbarToggle<CR>
 
 " // Set the height of Source Explorer window 
 let g:SrcExpl_winHeight = 8 
@@ -231,3 +246,70 @@ let g:SrcExpl_prevDefKey = "<F3>"
 let g:SrcExpl_nextDefKey = "<F4>" 
 au BufNewFile,BufRead *.cu set filetype=cuda
 au BufNewFile,BufRead *.cuh set filetype=cuda
+
+let g:ctrlp_map = '<leader>p'
+let g:ctrlp_cmd = 'CtrlP'
+map <leader>f :CtrlPMRU<CR>
+let g:ctrlp_custom_ignore = {
+    \ 'dir':  '\v[\/]\.(git|hg|svn|rvm)$',
+    \ 'file': '\v\.(exe|so|dll|zip|tar|tar.gz|pyc)$',
+    \ }
+let g:ctrlp_working_path_mode='ra'
+let g:ctrlp_match_window_bottom=1
+let g:ctrlp_max_height=15
+let g:ctrlp_match_window_reversed=0
+let g:ctrlp_mruf_max=500
+let g:ctrlp_follow_symlinks=1
+
+:nnoremap <c-]> g<c-]>
+:vnoremap <c-]> g<c-]>
+set background=dark
+set t_Co=256
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+" 使用希腊字母输入
+" set digraph
+set guifont=Source\ Code\ Pro\ for\ Powerline
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_symbols.space = "\ua0"
+let g:promptline_theme = 'luna'
+
+" air-line
+
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+    endif
+
+" unicode symbols
+let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '«'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.whitespace = 'Ξ'
+
+" airline symbols
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = ''
+set fenc=
+if executable("ag")
+  set grepprg=ag\ --nogroup\ --nocolor\ --ignore-case\ --column
+  set grepformat=%f:%l:%c:%m,%f:%l:%m
+endif
+autocmd! BufNewFile,BufRead *.vs,*.fs set ft=glsl

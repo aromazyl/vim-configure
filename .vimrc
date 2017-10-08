@@ -12,6 +12,7 @@ call vundle#begin()
 " 必须安装，let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'google/vim-maktaba'
+Plugin 'petRUShka/vim-opencl'
 Plugin 'bazelbuild/vim-bazel'
 "Plugin 'davidzchen/vim-bazel'
 Plugin 'vim-scripts/scons.vim'
@@ -228,3 +229,5 @@ let g:SrcExpl_prevDefKey = "<F3>"
 " // Set "<F4>" key for displaying the next definition
 " in the jump list 
 let g:SrcExpl_nextDefKey = "<F4>" 
+au BufNewFile,BufRead *.cu set filetype=cuda
+au BufNewFile,BufRead *.cuh set filetype=cuda

@@ -11,6 +11,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " 必须安装，let Vundle manage Vundle, required
+Plugin 'datsuns/vim-smv'
 Plugin 'neovimhaskell/haskell-vim'
 Plugin 'VundleVim/Vundle.vim'
 " Bundle 'dgryski/vim-godef'

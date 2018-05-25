@@ -315,3 +315,4 @@ if executable("ag")
   set grepformat=%f:%l:%c:%m,%f:%l:%m
 endif
 autocmd! BufNewFile,BufRead *.vs,*.fs set ft=glsl
+vnoremap // y/<C-R>"<CR>

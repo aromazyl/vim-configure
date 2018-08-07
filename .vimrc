@@ -4,80 +4,83 @@ filetype off                  " required
 
 " ==============================================================================
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
+" set rtp+=~/.vim/bundle/Vundle.vim
 
 " ==============================================================================
 " 安装的所有插件
-call vundle#begin()
+" call vundle#begin()
+call plug#begin('~/.vim/plugged')
 
 " 必须安装，let Vundle manage Vundle, required
-Plugin 'datsuns/vim-smv'
-Plugin 'neovimhaskell/haskell-vim'
-Plugin 'VundleVim/Vundle.vim'
-" Bundle 'dgryski/vim-godef'
-" Plugin 'tikhomirov/vim-glsl'
-" Bundle 'beyondmarc/glsl.vim'
-Bundle 'sheerun/vim-polyglot'
-Plugin 'edkolev/promptline.vim'
-Bundle 'dgryski/vim-godef'
-Bundle 'vim-scripts/pathogen.vim'
-Plugin 'rust-lang/rust.vim'
-Bundle 'Blackrush/vim-gocode'
-Bundle 'majutsushi/tagbar'
-Plugin 'vim-scripts/opencl.vim'
-Plugin 'google/vim-maktaba'
-Plugin 'petRUShka/vim-opencl'
-Plugin 'bazelbuild/vim-bazel'
-Plugin 'fatih/vim-go'
-"Plugin 'davidzchen/vim-bazel'
-Plugin 'vim-scripts/scons.vim'
-Plugin 'wesleyche/SrcExpl'
-Plugin 'wlangstroth/vim-racket'
-Plugin 'derekwyatt/vim-scala'
-"Plugin 'bling/vim-airline'
-Plugin 'vim-airline/vim-airline'
-" Plugin 'vim-scripts/matlab.vim'
-Plugin 'vim-airline/vim-airline-themes'
+Plug 'datsuns/vim-smv'
+Plug 'neovimhaskell/haskell-vim'
+Plug 'VundleVim/Vundle.vim'
+" Plug 'dgryski/vim-godef'
+" Plug 'tikhomirov/vim-glsl'
+" Plug 'beyondmarc/glsl.vim'
+Plug 'sheerun/vim-polyglot'
+Plug 'edkolev/promptline.vim'
+Plug 'dgryski/vim-godef'
+Plug 'vim-scripts/pathogen.vim'
+Plug 'rust-lang/rust.vim'
+Plug 'Blackrush/vim-gocode'
+Plug 'majutsushi/tagbar'
+Plug 'vim-scripts/opencl.vim'
+Plug 'google/vim-maktaba'
+Plug 'petRUShka/vim-opencl'
+Plug 'bazelbuild/vim-bazel'
+Plug 'fatih/vim-go'
+"Plug 'davidzchen/vim-bazel'
+Plug 'vim-scripts/scons.vim'
+Plug 'wesleyche/SrcExpl'
+Plug 'wlangstroth/vim-racket'
+Plug 'derekwyatt/vim-scala'
+"Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline'
+" Plug 'vim-scripts/matlab.vim'
+Plug 'vim-airline/vim-airline-themes'
 " 来自github
 
 "主题
-Plugin 'flazz/vim-colorschemes' 
-"Plugin 'vim-colorschemes/colors/codeschool.vim'
-"Plugin 'tomasr/molokai'
+Plug 'flazz/vim-colorschemes' 
+"Plug 'vim-colorschemes/colors/codeschool.vim'
+"Plug 'tomasr/molokai'
 "let g:molokai_original = 1
 "let g:rehash256 = 1
-Plugin 'vim-scripts/a.vim'
-Plugin 'vim-scripts/google.vim'
-Plugin 'vim-scripts/cpp.vim'
-Plugin 'vim-scripts/taglist.vim'
-"Plugin 'Valloric/YouCompleteMe'
-Plugin 'vim-scripts/python.vim'
+Plug 'vim-scripts/a.vim'
+Plug 'vim-scripts/google.vim'
+Plug 'vim-scripts/cpp.vim'
+Plug 'vim-scripts/taglist.vim'
+"Plug 'Valloric/YouCompleteMe'
+Plug 'vim-scripts/python.vim'
 " vim 模版
-Plugin 'aperezdc/vim-template'
-Plugin 'vim-scripts/nginx.vim'
+Plug 'aperezdc/vim-template'
+Plug 'vim-scripts/nginx.vim'
 " vim 语法校验
-" Plugin 'scrooloose/syntastic'
+" Plug 'scrooloose/syntastic'
 
 "底部状态栏
-Plugin 'Lokaltog/vim-powerline'
+Plug 'Lokaltog/vim-powerline'
 
 "文件目录
-Plugin 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree'
 
 "快速查找
-Plugin 'ctrlpvim/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 
 "快速注释
-Plugin 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdcommenter'
 
 "自动补全
-Plugin 'Shougo/neocomplcache.vim'
+Plug 'Shougo/neocomplcache.vim'
+
+call plug#end()
 
 " 来自vim
 
 " non github repos
 
-call vundle#end()            " required
+" call vundle#end()            " required
 
 " ==============================================================================
 filetype plugin indent on    " required
@@ -86,10 +89,10 @@ filetype plugin indent on    " required
 
 " ==============================================================================
 " vundle命令
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+" :PlugList       - lists configured plugins
+" :PlugInstall    - installs plugins; append `!` to update or just :PlugUpdate
+" :PlugSearch foo - searches for foo; append `!` to refresh local cache
+" :PlugClean      - confirms removal of unused plugins; append `!` to auto-approve removal
 
 " ==============================================================================
 " 组件设置
@@ -308,6 +311,7 @@ let g:airline_right_sep = ''
 let g:airline_right_alt_sep = ''
 let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
+let g:go_version_warning = 0
 let g:airline_symbols.linenr = ''
 set fenc=
 if executable("ag")
@@ -315,3 +319,6 @@ if executable("ag")
   set grepformat=%f:%l:%c:%m,%f:%l:%m
 endif
 autocmd! BufNewFile,BufRead *.vs,*.fs set ft=glsl
+set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
+set fileencoding=utf-8
+set encoding=utf-8
